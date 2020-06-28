@@ -8,7 +8,6 @@ const addForm = document.forms["add-book"];
 const handleAddBook = async (e) => {
   e.preventDefault();
   let titleOfTheBook = e.target.parentElement.querySelector("input");
-  // An alternative is 'addBookInput.value'
   if (titleOfTheBook.value) {
     const bookToAdd = { title: titleOfTheBook.value };
     const params = {
