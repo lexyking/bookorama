@@ -14,5 +14,5 @@ app.use(cors());
 
 booksController(app);
 
-app.listen(process.env.port || 3000);
-console.log(`Listening to port ${process.env.port}`);
+app.listen(process.env.PORT || 3000);
+console.log(`Listening to port ${process.env.PORT}`);
