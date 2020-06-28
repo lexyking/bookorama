@@ -1,0 +1,130 @@
+:root {
+  --lightgray: rgb(153, 170, 181);
+  --blue: rgb(114, 137, 218);
+  --white: rgb(255, 255, 255);
+  --lightBlack: rgba(44, 47, 51, 0.2);
+  --black: rgb(35, 39, 42);
+  --blackBis: rgba(35, 39, 42, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--lightBlack);
+  color: var(--white);
+}
+
+#wrapper {
+  width: 80%;
+  min-height: calc(100vh - 200px);
+  margin: 2em auto;
+  text-align: center;
+  box-shadow: 5px 5px 20px var(--blackBis);
+  border-radius: 10px;
+  padding-bottom: 2em;
+  background: var(--blackBis);
+}
+
+.listOfBooks > .hide {
+  display: none;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  background: var(--black);
+}
+
+.headerTitle {
+  width: 100%;
+  background: var(--lightgray);
+  padding: 1em;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.input {
+  padding: 1em;
+  border-radius: 10px;
+  min-width: 80%;
+  border: none;
+}
+
+#book-list {
+  padding-top: 0.5em;
+}
+
+#add-book {
+  position: relative;
+  width: 70%;
+  margin: auto;
+}
+
+.listOfBooks {
+  width: 80%;
+  margin: auto;
+  padding: 0.5em;
+}
+
+.bookItem {
+  border-left: 5px solid var(--lightgray);
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.9em 0;
+  cursor: pointer;
+}
+
+.bookItem:hover {
+  border-left: 5px solid var(--blue);
+}
+
+.btn {
+  background: var(--lightgray);
+  color: black;
+  padding: 1em;
+}
+
+.btn:hover {
+  background: var(--blue);
+  color: white;
+}
+
+.deleteBtn {
+  border-radius: 10px;
+  padding: 0.5em;
+}
+
+.addBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: none;
+}
+
+.addbookInput {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  background: var(--black);
+  color: var(--lightgray);
+}
+
+@media screen and (min-width: 640px) {
+  #wrapper {
+    width: 800px;
+  }
+}

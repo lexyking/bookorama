@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="design.css" />
+    <script src="index.js" defer></script>
+    <!-- <script src="bundle.js"></script> -->
+    <title>Todo app with vanilla js</title>
+  </head>
+  <body>
+    <header class="header"></header>
+    <main id="wrapper">
+      <div class="headerTitle">
+        <h1 class="title">Bookorama</h1>
+        <form id="searchBook">
+          <input
+            class="input searchInput"
+            type="text"
+            placeholder="Search books..."
+          />
+        </form>
+      </div>
+      <div id="book-list">
+        <h2>Books to Read</h2>
+        <ul class="listOfBooks">
+          <% books.forEach(book => { %>
+          <li class="bookItem">
+            <span><%= book.title %></span
+            ><span class="btn deleteBtn">delete</span>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+      <form id="add-book">
+        <input
+          class="input addbookInput"
+          type="text"
+          placeholder="Add a book..."
+        />
+        <button class="btn addBtn" type="submit">
+          Add
+        </button>
+      </form>
+    </main>
+    <footer class="footer">&copy; Copyright, 2020</footer>
+  </body>
+</html>
