@@ -1,9 +1,10 @@
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 // Connect to the database
 mongoose.connect(
-  "mongodb+srv://joan:joanuser@cluster0-nm1rg.mongodb.net/Bookorama?retryWrites=true&w=majority"
+  `mongodb://${process.env.USER_LOGIN}:${process.env.PWD_LOGIN}@ds137404.mlab.com:37404/heroku_2l73s4dq`
 );
 
 //Database schema
@@ -12,14 +13,6 @@ const BookSchema = new mongoose.Schema({
 });
 
 const Book = mongoose.model("book", BookSchema);
-
-//Save the book title in the database
-// Book({ title: "Une saison blanche et seche" }).save((err) => {
-//   if (err) throw err;
-//   console.log("book saved");
-// });
-
-const urlEncoderParse = bodyParser.urlencoded({ extended: false });
 
 const booksController = (app) => {
   app.get("/books", (req, res) => {
@@ -43,24 +36,7 @@ const booksController = (app) => {
         res.json(book);
       }
     );
-    // const result = books.filter(
-    //   (book) => book.title.replace(/[ ]+/g, "-") !== req.params.book
-    // );
-    // books = result;
-    // console.log(book.title.replace(/[, ']+/g, "-"));
-    // const result = books.filter((bookTitle) => bookTitle !== req.params.book);
-    // console.log("req.params", result);
-    // res.json(result);
   });
 };
 
 module.exports = booksController;
-
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://joan:<password>@cluster0-nm1rg.mongodb.net/<dbname>?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
