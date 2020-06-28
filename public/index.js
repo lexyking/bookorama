@@ -39,27 +39,24 @@ const handleDelete = async (e) => {
     body: JSON.stringify(titleOfTheBookToDelete),
   };
 
-  console.log("params", params);
   const deletedRequest = await fetch(`/books/${elementToDelete}`, params);
   const deleteBook = await deletedRequest.json();
-  console.log("deleteBook", deleteBook);
   location.reload();
 };
 
-// const handleSearch = (e) => {
-//   e.preventDefault();
-//   const term = e.target.value.toLowerCase();
-//   const books = listOfBooks.querySelectorAll(".bookItem");
-//   books.forEach((book) => {
-//     book.textContent.toLowerCase().includes(term)
-//       ? book.classList.remove("hide")
-//       : book.classList.add("hide");
-//   });
-// };
+const handleSearch = (e) => {
+  e.preventDefault();
+  const termToSearch = e.target.value.toLowerCase();
+  const books = listOfBooks.querySelectorAll(".bookItem");
+  books.forEach((book) => {
+    book.textContent.toLowerCase().includes(termToSearch)
+      ? book.classList.remove("hide")
+      : book.classList.add("hide");
+  });
+};
 
 addBtn.addEventListener("click", handleAddBook);
 deleteBtns.forEach((deleteBtn) =>
   deleteBtn.addEventListener("click", handleDelete)
 );
-//   searchForm.addEventListener("keyup", handleSearch);
-// }
+searchForm.addEventListener("keyup", handleSearch);

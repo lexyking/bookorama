@@ -29,7 +29,7 @@ const booksController = (app) => {
     });
   });
 
-  app.delete("/books/:book", (req, res) => {
+  app.delete("/books:book", (req, res) => {
     Book.find({ title: req.params.book.replace(/\-/g, " ") }).remove(
       (err, book) => {
         if (err) throw err;
