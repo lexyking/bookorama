@@ -17,7 +17,7 @@ const handleAddBook = async (e) => {
       },
       body: JSON.stringify(bookToAdd),
     };
-    const data = await fetch("/books", params);
+    const data = await fetch("/", params);
     const bookAdded = await data.json();
     location.reload();
     titleOfTheBook.value = "";
@@ -28,7 +28,7 @@ const handleDelete = async (e) => {
   e.preventDefault();
   const elementToDelete = e.target.previousSibling.textContent
     .trim()
-    .replace(/[, ']+/g, "-");
+    .replace(/[ ]+/g, "-");
 
   const titleOfTheBookToDelete = { title: elementToDelete };
   const params = {
@@ -39,7 +39,7 @@ const handleDelete = async (e) => {
     body: JSON.stringify(titleOfTheBookToDelete),
   };
 
-  const deletedRequest = await fetch(`/books/${elementToDelete}`, params);
+  const deletedRequest = await fetch(`/${elementToDelete}`, params);
   const deleteBook = await deletedRequest.json();
   location.reload();
 };

@@ -15,21 +15,21 @@ const BookSchema = new mongoose.Schema({
 const Book = mongoose.model("book", BookSchema);
 
 const booksController = (app) => {
-  app.get("/books", (req, res) => {
+  app.get("/", (req, res) => {
     Book.find({}, (err, books) => {
       if (err) throw err;
       res.render("books", { books });
     });
   });
 
-  app.post("/books", (req, res) => {
+  app.post("/", (req, res) => {
     Book(req.body).save((err) => {
       if (err) throw err;
       res.status(200).json({ result: "book added" });
     });
   });
 
-  app.delete("/books:book", (req, res) => {
+  app.delete("/:book", (req, res) => {
     Book.find({ title: req.params.book.replace(/\-/g, " ") }).remove(
       (err, book) => {
         if (err) throw err;
