@@ -3,7 +3,7 @@
   --blue: rgb(114, 137, 218);
   --white: rgb(255, 255, 255);
   --lightBlack: rgba(44, 47, 51, 0.2);
-  --black: rgb(35, 39, 42);
+  --black: #31373b;
   --blackBis: rgba(35, 39, 42, 0.5);
 }
 
@@ -16,6 +16,7 @@
 body {
   background: var(--lightBlack);
   color: var(--white);
+  font-size: 0.8em;
 }
 
 #wrapper {
@@ -27,6 +28,7 @@ body {
   border-radius: 10px;
   padding-bottom: 2em;
   background: var(--blackBis);
+  font-size: 1.2em;
 }
 
 .listOfBooks > .hide {
@@ -37,6 +39,28 @@ body {
   height: 100px;
   width: 100%;
   background: var(--black);
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+  color: var(--lightgray);
+  font-size: 2.3em;
+  font-family: Orbitron;
+}
+
+.logoContainer {
+  width: 100px;
+  height: 100px;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 .headerTitle {
@@ -81,7 +105,7 @@ body {
 }
 
 .bookItem:hover {
-  border-left: 5px solid var(--blue);
+  border-left: 5px solid var(--black);
 }
 
 .btn {
@@ -91,7 +115,7 @@ body {
 }
 
 .btn:hover {
-  background: var(--blue);
+  background: var(--black);
   color: white;
 }
 
@@ -123,7 +147,17 @@ body {
   color: var(--lightgray);
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 780px) {
+  .headerContainer {
+    width: 800px;
+    margin: auto;
+  }
+
+  .title {
+    width: 90%;
+    text-align: center;
+    font-size: 3em;
+  }
   #wrapper {
     width: 800px;
   }

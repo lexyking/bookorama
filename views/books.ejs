@@ -4,15 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="design.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Notable|Orbitron"
+    />
     <script src="index.js" defer></script>
     <!-- <script src="bundle.js"></script> -->
     <title>Todo app with vanilla js</title>
   </head>
   <body>
-    <header class="header"></header>
+    <header class="header">
+      <div class="headerContainer">
+        <div class="logoContainer">
+          <img src="assets/joan_logo.png" alt="joan logo" />
+        </div>
+        <h1 class="title">Bookorama</h1>
+      </div>
+    </header>
     <main id="wrapper">
       <div class="headerTitle">
-        <h1 class="title">Bookorama</h1>
         <form id="searchBook">
           <input
             class="input searchInput"
